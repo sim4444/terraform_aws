@@ -1,0 +1,17 @@
+#cloud-config
+users:
+  - name: web
+    primary_group: web
+    groups: wheel
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDKKV0lMYZEq/XFTa5goGUqUwUa5g6fcgxGlx90xWsBU samcanadian44@gmail.com
+
+packages:
+  - nginx
+  - nmap
+
+runcmd:
+  - systemctl start nginx
+  - systemctl enable nginx
