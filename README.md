@@ -3,14 +3,23 @@
 
 See lab instructions on D2L for details
 
-This lab demonstrates the process of creating a basic AWS infrastructure using Terraform. The goal was to provision a VPC, subnet, internet gateway, route table, security group, and an EC2 instance running Ubuntu 24.04. The lab also included configuring SSH access and ensuring best practices for file security.
+This lab shows the process of creating a basic AWS infrastructure using Terraform.
 
 Steps Performed
 1. Setting Up the Environment
 Installed and configured Terraform on my local machine.
 Verified access to AWS using valid credentials in the ~/.aws/credentials file.
 Created the Terraform configuration file (main.tf) with all required infrastructure components.
-2. Infrastructure Provisioning
+
+## Created a New SSH Key Pair
+
+ -created an SSH key pair for accessing the EC2 instance:
+
+1. Use the following command to generate a new SSH key pair:
+   ```bash
+   ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f do-key
+   
+3. Infrastructure Provisioning
 I edited the Terraform configuration (main.tf) to set up the following AWS resources:
 
 a. VPC
@@ -40,13 +49,13 @@ chmod 600 do-key
 Ensured that the private key had the correct permissions before attempting to SSH into the instance.
 4. Terraform Commands Used
 Initialized Terraform to download the AWS provider plugin:
-terraform init
+-terraform init
 Validated the configuration:
-terraform validate
+-terraform validate
 Planned the changes:
-terraform plan
+-terraform plan
 Applied the changes to provision the resources:
-terraform apply
+-terraform apply
 
 5. Outputs
 Configured Terraform to output the instance's public IP and DNS name for quick access:
@@ -58,18 +67,15 @@ output "instance_ip_addr" {
   }
 }
 
-Clone this repository:
-
-git clone <repo-url>
-cd 4640-w4-lab
-Initialize Terraform:
+steps:
+1. Initialize Terraform:
 terraform init
-Review the plan:
+2. Review the plan:
 terraform plan
-Apply the configuration:
+3. Apply the configuration:
 terraform apply
-SSH into the EC2 instance using the private key:
-ssh -i do-key ubuntu@<public_ip>
+4. SSH into the EC2 instance using the private key:
+ssh -i do-key web@<public_ip>
 
 
 Acknowledgments
