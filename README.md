@@ -62,22 +62,22 @@ Ensured that the private key had the correct permissions before attempting to SS
    
 a. Initialized Terraform to download the AWS provider plugin:
 ```bash
--terraform init
+terraform init
 ```
 
 b. Validated the configuration:
 ```bash
--terraform validate
+terraform validate
 ```
 
 c. Planned the changes:
 ```bash
--terraform plan
+terraform plan
 ```
 
 d. Applied the changes to provision the resources:
 ```bash
--terraform apply
+terraform apply
 ```
 
 e. SSH into the EC2 instance using the private key:
