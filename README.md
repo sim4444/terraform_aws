@@ -18,6 +18,7 @@ Created the Terraform configuration file (main.tf) with all required infrastruct
 1. Use the following command to generate a new SSH key pair:
    ```bash
    ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f do-key
+   ```
    
 3. Infrastructure Provisioning
 I edited the Terraform configuration (main.tf) to set up the following AWS resources:
@@ -50,40 +51,39 @@ Associated the security group with the EC2 instance.
 Configured a cloud-init script (cloud-config.yaml) to customize the instance during boot.
 
 3. Key Pair Security
-Secured the private key (do-key) by using the command:
+   
+- Secured the private key (do-key) by using the command:
+```bash
 chmod 600 do-key
+```
 Ensured that the private key had the correct permissions before attempting to SSH into the instance.
 
-4. Terraform Commands Used:
+5. Terraform Commands Used:
    
-Initialized Terraform to download the AWS provider plugin:
+a. Initialized Terraform to download the AWS provider plugin:
+```bash
 -terraform init
-Validated the configuration:
+```
+
+b. Validated the configuration:
+```bash
 -terraform validate
-Planned the changes:
+```
+
+c. Planned the changes:
+```bash
 -terraform plan
-Applied the changes to provision the resources:
+```
+
+d. Applied the changes to provision the resources:
+```bash
 -terraform apply
+```
 
-5. Outputs
-Configured Terraform to output the instance's public IP and DNS name for quick access:
-output "instance_ip_addr" {
-  description = "The public IP and DNS of the web EC2 instance."
-  value = {
-    "public_ip" = aws_instance.web.public_ip
-    "dns_name"  = aws_instance.web.public_dns
-  }
-}
-
-steps:
-1. Initialize Terraform:
-terraform init
-2. Review the plan:
-terraform plan
-3. Apply the configuration:
-terraform apply
-4. SSH into the EC2 instance using the private key:
+e. SSH into the EC2 instance using the private key:
+```bash
 ssh -i do-key web@<public_ip>
+```
 
 
 Acknowledgments
