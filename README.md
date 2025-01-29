@@ -1,8 +1,5 @@
 # 4640-w4-lab-start-w25
 
-
-See lab instructions on D2L for details
-
 This lab shows the process of creating a basic AWS infrastructure using Terraform.
 
 Steps Performed
