@@ -2,11 +2,9 @@
 
 This lab shows the process of creating a basic AWS infrastructure using Terraform.
 
-Steps Performed
-1. Setting Up the Environment
-Installed and configured Terraform on my local machine.
-Verified access to AWS using valid credentials in the ~/.aws/credentials file.
-Created the Terraform configuration file (main.tf) with all required infrastructure components.
+Steps Performed:
+a. Installed and configured Terraform on my local machine.
+b. Edited the Terraform configuration file (main.tf) and "cloud-config.yaml" cloud-init configuration with all required infrastructure components.
 
 ## Created a New SSH Key Pair
 
@@ -17,7 +15,7 @@ Created the Terraform configuration file (main.tf) with all required infrastruct
    ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f do-key
    ```
    
-3. Infrastructure Provisioning
+2. Infrastructure Provisioning
 I edited the Terraform configuration (main.tf) to set up the following AWS resources:
 
 a. VPC
@@ -55,7 +53,7 @@ chmod 600 do-key
 ```
 Ensured that the private key had the correct permissions before attempting to SSH into the instance.
 
-5. Terraform Commands Used:
+4. Terraform Commands Used:
    
 a. Initialized Terraform to download the AWS provider plugin:
 ```bash
@@ -83,6 +81,6 @@ ssh -i do-key web@<public_ip>
 ```
 
 
-Acknowledgments
+5. Acknowledgments
 HashiCorp Terraform Documentation: https://developer.hashicorp.com/terraform
 AWS Terraform Provider Docs: https://registry.terraform.io/providers/hashicorp/aws/latest
